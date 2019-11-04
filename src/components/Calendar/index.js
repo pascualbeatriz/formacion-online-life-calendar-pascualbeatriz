@@ -17,7 +17,14 @@ const Calendar = props => {
           
       <div className="day__list-container">
         <ul className="day__list">
-          <li className="day__list-elements"></li>
+        {/* {allMoods
+          .map((face,index) => 
+            <li className="day__list-elements" key={index}>
+
+            </li>
+            )
+          
+        } */}
         </ul>
       </div>
     </Fragment>
