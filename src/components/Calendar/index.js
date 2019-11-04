@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Calendar = props => {
+  const {allMoods} = props;
   return (
     <Fragment>
       <header className="header__button">
