@@ -19,12 +19,14 @@ const Calendar = props => {
         <ul className="day__list">
         {/* {allMoods
           .map((face,index) => 
-            <li className="day__list-elements" key={index}>
 
+            <li className="day__list-elements" key={index}>
+              <p className={`icon__mood ${face.state === ':)' ? 'form__happy-face' : 'form__unhappy-face'}`}>{face.state}</p>
             </li>
-            )
+          )} */}
+            
           
-        } */}
+        
         </ul>
       </div>
     </Fragment>

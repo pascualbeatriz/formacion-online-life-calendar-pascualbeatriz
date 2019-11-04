@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Editor = props => {
-  const {getInfoDate,getInfoMood,getinfoMessage,getLocalStorage} = props;
+  const {getInfoDate,getInfoMood,getinfoMessage,getLocalStorage,dates,repeat} = props;
   return (
     <Fragment>
       <form className="form__editor" action="/" method="post" id="editor">
@@ -24,7 +24,9 @@ const Editor = props => {
         </label>
         <label htmlFor="form__save">
           <Link to="/">
-          <input type="submit" id="form__save" name="form__save" value="Enviar" onClick = {getLocalStorage}/>
+          <input type="submit" id="form__save" name="form__save" value="Enviar" onClick = {getLocalStorage} 
+          // disabled={dates !== '' ? '' : 'disabled'}
+          />
           </Link>
         </label>
         <label htmlFor="form__reset">

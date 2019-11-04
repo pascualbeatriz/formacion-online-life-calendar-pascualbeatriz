@@ -52,19 +52,21 @@ class App extends React.Component {
     })
   }
 
+
  getLocalStorage (){
     localStorage.setItem('lsMood', JSON.stringify(this.state));
     this.setState(prevState => {
-      const {date, mood, message} = this.state;
+      const {date, mood, message,repeat} = this.state;
       return {
-        allMoods: [date, mood, message]         
+        allMoods: [date, mood, message,repeat]   
       };
     })
+   
   }
 
 
   render() {
-    const {allMoods} = this.state;
+    const {allMoods,dates,repeat} = this.state;
     return (
       <div className="App">
         <Switch>
@@ -80,6 +82,8 @@ class App extends React.Component {
           <Route path="/editor/:id" render = {(routerProps) => {
             return (
               <Editor
+              dates = {dates}
+              repeat = {repeat}
               getInfoDate = {this.getInfoDate}
               getInfoMood = {this.getInfoMood}
               getinfoMessage = {this.getinfoMessage}
