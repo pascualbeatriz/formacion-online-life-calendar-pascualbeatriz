@@ -13,7 +13,8 @@ class App extends React.Component {
       dates:'',
       mood:'',
       message:'',
-      allMoods:[]
+      allMoods:[],
+      repeat:false
     }
     this.getLocalStorage = this.getLocalStorage.bind(this);
     this.getInfoDate = this.getInfoDate.bind(this);
@@ -22,7 +23,6 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-
     const ls = JSON.parse(localStorage.getItem('lsMood'));
     if (ls !==null){
       this.setState({
@@ -64,7 +64,7 @@ class App extends React.Component {
 
 
   render() {
-    const {getInfoDate, getInfoMood, getinfoMessage, date, mood, message, allMoods } = this.state;
+    const {getInfoDate, getInfoMood, getinfoMessage, date, mood, message, allMoods, getLocalStorage } = this.state;
     return (
       <div className="App">
         <Switch>
@@ -84,7 +84,6 @@ class App extends React.Component {
               getInfoMood = {getInfoMood}
               getinfoMessage = {getinfoMessage}
               getLocalStorage = {this.getLocalStorage}
-            
               />
 
             );
